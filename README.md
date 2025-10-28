@@ -2,13 +2,16 @@
 
 A secure, scalable full-stack web application with JWT-based authentication and CRUD operations for task management.
 
+**Live Demo**: [Coming Soon]  
+**Repository**: https://github.com/Sarwan-Projects/Scalable-Web-App
+
 ## 🚀 Technology Stack
 
 - **Frontend**: Next.js 15 (React 18), TailwindCSS 3.4
 - **Backend**: Node.js, Express.js 4.19
-- **Database**: MongoDB 8.7 with Mongoose
+- **Database**: MongoDB Atlas (Cloud)
 - **Authentication**: JWT (JSON Web Tokens)
-- **Security**: bcrypt for password hashing, express-validator
+- **Security**: bcrypt password hashing, express-validator
 - **Latest Versions**: All dependencies updated to latest stable releases
 
 ## 📋 Features
@@ -78,75 +81,51 @@ A secure, scalable full-stack web application with JWT-based authentication and 
 - ✅ Create, edit, delete tasks
 - ✅ User authentication flow
 
-## Getting Started
+## 🚀 Quick Setup
 
 ### Prerequisites
-
-- Node.js (v18 or higher)
-- MongoDB (local or Atlas)
+- Node.js v18+
 - npm or yarn
 
-### Backend Setup
+### 1. Clone & Install
 
-1. Navigate to backend directory:
+```bash
+git clone https://github.com/Sarwan-Projects/Scalable-Web-App.git
+cd Scalable-Web-App
+```
+
+### 2. Backend Setup
+
 ```bash
 cd backend
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Create `.env` file:
-```bash
-cp .env.example .env
-```
-
-4. Configure environment variables in `.env`:
+**Important:** Replace `<db_password>` in `backend/.env` with your actual MongoDB password:
 ```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
-JWT_EXPIRE=7d
-NODE_ENV=development
+MONGODB_URI=mongodb+srv://youresbuddies:YOUR_PASSWORD_HERE@cluster1.lwkedfx.mongodb.net/taskmanager?retryWrites=true&w=majority&appName=Cluster1
 ```
 
-5. Start the server:
+Start backend:
 ```bash
 npm run dev
 ```
+✅ Backend runs on `http://localhost:5000`
 
-Backend will run on `http://localhost:5000`
+### 3. Frontend Setup
 
-### Frontend Setup
-
-1. Navigate to frontend directory:
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Create `.env.local` file:
-```bash
-cp .env.example .env.local
-```
-
-4. Configure environment variables:
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-```
-
-5. Start the development server:
-```bash
 npm run dev
 ```
+✅ Frontend runs on `http://localhost:3000`
 
-Frontend will run on `http://localhost:3000`
+### 4. Test the App
+
+1. Open `http://localhost:3000`
+2. Click "Sign up" and create an account
+3. Login and start managing tasks!
 
 ## 📡 API Endpoints
 
@@ -182,28 +161,84 @@ Import `postman/collection.json` into Postman. Token is automatically saved afte
 
 See `SCALABILITY_NOTES.md` for production scaling strategies.
 
-## 🛠️ Development
+## 🚀 Deployment on Render
 
-**Backend** (with auto-reload):
+### Deploy Backend
+
+1. **Create Account**: Go to [render.com](https://render.com) and sign up
+
+2. **New Web Service**:
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
+   - Select `Scalable-Web-App` repository
+
+3. **Configure Service**:
+   - **Name**: `taskmanager-backend`
+   - **Region**: Choose closest to you
+   - **Branch**: `main`
+   - **Root Directory**: `backend`
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Instance Type**: Free
+
+4. **Environment Variables** (Add these):
+   ```
+   PORT=5000
+   NODE_ENV=production
+   MONGODB_URI=mongodb+srv://youresbuddies:YOUR_PASSWORD@cluster1.lwkedfx.mongodb.net/taskmanager?retryWrites=true&w=majority&appName=Cluster1
+   JWT_SECRET=taskmanager_secret_key_2024_sarwan_project_secure
+   JWT_EXPIRE=7d
+   FRONTEND_URL=https://your-frontend-url.vercel.app
+   ```
+
+5. Click "Create Web Service"
+
+6. **Copy Backend URL**: After deployment, copy the URL (e.g., `https://taskmanager-backend.onrender.com`)
+
+### Deploy Frontend on Vercel
+
+1. **Create Account**: Go to [vercel.com](https://vercel.com) and sign up
+
+2. **Import Project**:
+   - Click "Add New" → "Project"
+   - Import your GitHub repository
+   - Select `Scalable-Web-App`
+
+3. **Configure Project**:
+   - **Framework Preset**: Next.js
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `.next`
+
+4. **Environment Variables**:
+   ```
+   NEXT_PUBLIC_API_URL=https://taskmanager-backend.onrender.com/api
+   ```
+   (Replace with your actual Render backend URL)
+
+5. Click "Deploy"
+
+6. **Update Backend CORS**:
+   - Go back to Render dashboard
+   - Update `FRONTEND_URL` environment variable with your Vercel URL
+   - Redeploy backend
+
+### ✅ Your App is Live!
+
+- **Frontend**: `https://your-app.vercel.app`
+- **Backend**: `https://taskmanager-backend.onrender.com`
+
+## 🛠️ Local Development
+
+**Backend:**
 ```bash
 cd backend && npm run dev
 ```
 
-**Frontend** (with hot reload):
-```bash
-cd frontend && npm run dev
-```
-
-## 📦 Production Build
-
-**Backend:**
-```bash
-cd backend && npm start
-```
-
 **Frontend:**
 ```bash
-cd frontend && npm run build && npm start
+cd frontend && npm run dev
 ```
 
 ## 👤 Author
