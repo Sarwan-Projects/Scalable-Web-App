@@ -2,13 +2,14 @@
 
 A secure, scalable full-stack web application with JWT-based authentication and CRUD operations for task management.
 
-## Technology Stack
+## 🚀 Technology Stack
 
-- **Frontend**: Next.js 14 (React), TailwindCSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB with Mongoose
+- **Frontend**: Next.js 15 (React 18), TailwindCSS 3.4
+- **Backend**: Node.js, Express.js 4.19
+- **Database**: MongoDB 8.7 with Mongoose
 - **Authentication**: JWT (JSON Web Tokens)
-- **Security**: bcrypt for password hashing
+- **Security**: bcrypt for password hashing, express-validator
+- **Latest Versions**: All dependencies updated to latest stable releases
 
 ## Project Structure
 
@@ -198,6 +199,21 @@ npm run build
 npm start
 ```
 
-## License
+## 👤 Author
 
-ISC
+**Sarwan**
+- Email: youres.buddies@gmail.com
+- GitHub: [@sarwan](https://github.com/sarwan)
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if this project helped you!
