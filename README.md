@@ -11,6 +11,29 @@ A secure, scalable full-stack web application with JWT-based authentication and 
 - **Security**: bcrypt for password hashing, express-validator
 - **Latest Versions**: All dependencies updated to latest stable releases
 
+## 📋 Features
+
+### ✅ Authentication & Security
+- User registration with password hashing (bcrypt)
+- JWT-based login system
+- Protected routes with middleware
+- Input validation (client & server side)
+
+### ✅ Dashboard Features
+- User profile display (name, email, stats)
+- Complete CRUD operations for tasks
+- Real-time search by title/description
+- Filter tasks by status (pending/completed)
+- Task statistics (total, pending, completed)
+- Logout functionality
+
+### ✅ Task Management
+- Create tasks with title, description, status
+- Edit existing tasks
+- Delete tasks with confirmation
+- View all tasks in responsive card layout
+- Status badges (color-coded)
+
 ## Project Structure
 
 ```
@@ -125,10 +148,10 @@ npm run dev
 
 Frontend will run on `http://localhost:3000`
 
-## API Endpoints
+## 📡 API Endpoints
 
 ### Authentication
-- `POST /api/auth/signup` - Register new user
+- `POST /api/auth/signup` - Register user
 - `POST /api/auth/login` - Login user
 
 ### Profile (Protected)
@@ -136,67 +159,51 @@ Frontend will run on `http://localhost:3000`
 
 ### Tasks (Protected)
 - `POST /api/tasks` - Create task
-- `GET /api/tasks` - Get all tasks (supports ?search= and ?status= params)
+- `GET /api/tasks` - Get all tasks
+- `GET /api/tasks?search=query` - Search tasks
+- `GET /api/tasks?status=pending` - Filter by status
 - `PUT /api/tasks/:id` - Update task
 - `DELETE /api/tasks/:id` - Delete task
 
-## Testing with Postman
+## 🧪 Testing with Postman
 
-1. Import the collection from `postman/collection.json`
-2. The collection includes all API endpoints with examples
-3. Token is automatically saved after login/signup
-4. All protected routes use the saved token
+Import `postman/collection.json` into Postman. Token is automatically saved after login/signup.
 
-## User Flow
+## 🔒 Security Features
 
-1. **Sign Up**: Create a new account at `/signup`
-2. **Login**: Authenticate at `/login`
-3. **Dashboard**: View profile and manage tasks at `/dashboard`
-4. **Create Task**: Click "Create Task" button
-5. **Search/Filter**: Use search bar and status filter
-6. **Edit/Delete**: Use buttons on task cards
-7. **Logout**: Click logout to end session
+- bcrypt password hashing (10 salt rounds)
+- JWT authentication with expiration
+- Protected routes with middleware
+- Input validation (client & server)
+- CORS configuration
+- Error handling
 
-## Security Features
+## 📈 Scalability
 
-- Password hashing with bcrypt (10 salt rounds)
-- JWT token-based authentication
-- Protected API routes with middleware
-- Client-side and server-side validation
-- Secure token storage in localStorage
-- CORS enabled for cross-origin requests
+See `SCALABILITY_NOTES.md` for production scaling strategies.
 
-## Scalability
+## 🛠️ Development
 
-See `SCALABILITY_NOTES.md` for detailed information on scaling this application for high-traffic production environments.
-
-## Development
-
-### Backend Development
+**Backend** (with auto-reload):
 ```bash
-cd backend
-npm run dev  # Uses nodemon for auto-reload
+cd backend && npm run dev
 ```
 
-### Frontend Development
+**Frontend** (with hot reload):
 ```bash
-cd frontend
-npm run dev  # Next.js hot reload enabled
+cd frontend && npm run dev
 ```
 
-## Production Build
+## 📦 Production Build
 
-### Backend
+**Backend:**
 ```bash
-cd backend
-npm start
+cd backend && npm start
 ```
 
-### Frontend
+**Frontend:**
 ```bash
-cd frontend
-npm run build
-npm start
+cd frontend && npm run build && npm start
 ```
 
 ## 👤 Author
@@ -204,16 +211,10 @@ npm start
 **Sarwan**
 - Email: youres.buddies@gmail.com
 - GitHub: [Sarwan-Projects](https://github.com/Sarwan-Projects)
-- Repository: [Scalable-Web-App](https://github.com/Sarwan-Projects/Scalable-Web-App)
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+MIT License
 
 ## ⭐ Show Your Support
 
