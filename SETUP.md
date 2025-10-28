@@ -14,8 +14,8 @@ Complete setup instructions for the Task Manager application.
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd task-manager
+git clone https://github.com/Sarwan-Projects/Scalable-Web-App.git
+cd Scalable-Web-App
 ```
 
 ### 2. Backend Setup
@@ -289,7 +289,8 @@ For issues or questions:
 
 **Sarwan**
 - Email: youres.buddies@gmail.com
-- GitHub: [Your GitHub Profile]
+- GitHub: [Sarwan-Projects](https://github.com/Sarwan-Projects)
+- Repository: [Scalable-Web-App](https://github.com/Sarwan-Projects/Scalable-Web-App)
 
 ## License
 

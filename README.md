@@ -203,7 +203,8 @@ npm start
 
 **Sarwan**
 - Email: youres.buddies@gmail.com
-- GitHub: [@sarwan](https://github.com/sarwan)
+- GitHub: [Sarwan-Projects](https://github.com/Sarwan-Projects)
+- Repository: [Scalable-Web-App](https://github.com/Sarwan-Projects/Scalable-Web-App)
 
 ## 📄 License
 
